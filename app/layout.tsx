@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Link from "next/link";
 import "./globals.css";
+import Image from "next/image";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,11 +29,22 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex flex-row gap-32 font-bold">
         <div>
-          <div></div>
-          <div>Dashboard</div>
-          <div>Products</div>
-          <div>Market</div>
-          <div>Orders</div>
+          <Link href="/profile">
+            <div>
+              <img src="" alt="Profile Image"></img>
+            </div>
+            <div>
+              <p>Username</p>
+              <p>User role</p>
+            </div>
+          </Link>
+          <p>Pages</p>
+          <div className="flex flex-col gap-4">
+            <Link href="/dashboard"></Link>
+            <Link href="/products">Products</Link>
+            <Link href="/market">Market</Link>
+            <Link href="/orders">Orders</Link>
+          </div>
         </div>
         {children}
       </body>
