@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Link from "next/link";
+import {
+  IconLayoutDashboard,
+  IconListDetails,
+  IconPackage,
+  IconShoppingCart,
+} from "@tabler/icons-react";
 import "./globals.css";
 import Image from "next/image";
 
@@ -27,23 +33,51 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-row gap-32 font-bold">
-        <div>
-          <Link href="/profile">
+      <body className="flex flex-row font-body h-full">
+        <div className="flex flex-col bg-[#0a0a0a] gap-36 w-fit h-screen">
+          <Link href="/profile" className="flex flex-row">
             <div>
               <img src="" alt="Profile Image"></img>
             </div>
             <div>
               <p>Username</p>
-              <p>User role</p>
+              <p>Userole</p>
             </div>
           </Link>
-          <p>Pages</p>
-          <div className="flex flex-col gap-4">
-            <Link href="/dashboard"></Link>
-            <Link href="/products">Products</Link>
-            <Link href="/market">Market</Link>
-            <Link href="/orders">Orders</Link>
+          <div className="flex flex-col p-8 gap-2">
+            <div>
+              <p className="font-bold text-2xl">Pages</p>
+            </div>
+            <div className="flex flex-col gap-1">
+              <Link
+                href="/api/dashboard"
+                className="flex flex-row items-center px-7 py-3 gap-3 hover:bg-violet-700 rounded-lg"
+              >
+                <IconLayoutDashboard color="white" size={26} />
+                <p>Dashboard</p>
+              </Link>
+              <Link
+                href="/api/products"
+                className="flex flex-row items-center px-7 py-3 gap-3 hover:bg-violet-700 rounded-lg"
+              >
+                <IconPackage color="white" size={26} />
+                <p>Products</p>
+              </Link>
+              <Link
+                href="/api/market"
+                className="flex flex-row items-center px-7 py-3 gap-3 hover:bg-violet-700 rounded-lg"
+              >
+                <IconShoppingCart color="white" size={26} />
+                <p>Market</p>
+              </Link>
+              <Link
+                href="/api/orders"
+                className="flex flex-row items-center px-7 py-3 gap-3 hover:bg-violet-700 rounded-lg"
+              >
+                <IconListDetails color="white" size={26} />
+                <p>Orders</p>
+              </Link>
+            </div>
           </div>
         </div>
         {children}
