@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import Link from "next/link";
 import {
   IconLayoutDashboard,
@@ -8,17 +7,6 @@ import {
   IconShoppingCart,
 } from "@tabler/icons-react";
 import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -36,7 +24,6 @@ export default function RootLayout({
         <div className="flex flex-col bg-[#0a0a0a] gap-36 w-fit h-screen">
           <Link href="/profile" className="flex flex-row">
             <div>
-              <img src="" alt="Profile Image"></img>
             </div>
             <div>
               <p>Username</p>
