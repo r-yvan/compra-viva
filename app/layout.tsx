@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
@@ -7,6 +8,7 @@ import {
   IconShoppingCart,
 } from "@tabler/icons-react";
 import "./globals.css";
+import Loading from "./loading";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-row font-body h-full text-white">
+      <body className="flex flex-row font-body h-screen text-white">
         <div className="flex flex-col bg-[#0a0a0a] gap-36 w-fit border-r-[1px] border-white border-opacity-10">
           <Link href="/profile" className="flex flex-row">
             <div></div>
@@ -65,7 +67,7 @@ export default function RootLayout({
             </div>
           </div>
         </div>
-        {children}
+        <Suspense fallback={<Loading />}>{children}</Suspense>
       </body>
     </html>
   );
