@@ -1,5 +1,9 @@
 import { GridPatternDashed } from "@/components/GridPatternDashed";
-import { IconComet, IconUserHexagon } from "@tabler/icons-react";
+import {
+  IconComet,
+  IconHomeDollar,
+  IconUserHexagon,
+} from "@tabler/icons-react";
 import TopNavigationBar from "@/components/TopNavigationBar";
 import { Waves } from "@/components/ui/waves-background";
 import FeatureCard from "@/components/FeatureCard";
@@ -62,7 +66,7 @@ const Home = () => {
               <UsersCard userType="Sellers" />
             </div>
             <div>
-              <UsersCard userType="Buyers"/>
+              <UsersCard userType="Buyers" />
             </div>
           </div>
         </div>
@@ -77,10 +81,24 @@ const Home = () => {
           </p>
         </div>
         <div className="flex p-2 gap-5 justify-center">
-          <FeatureCard />
-          <FeatureCard />
-          <FeatureCard />
-          <FeatureCard />
+          <FeatureCard
+            title="Online Trading"
+            description="This ecommerce is good since it helps modern and remote trading"
+            icon={<IconHomeDollar size={32} color="#8b5cf6" />}
+          />
+          <FeatureCard
+            title="Order Tracking"
+            description="Keeps customers informed with live updates on their shipment's status"
+            icon={<IconHomeDollar size={32} color="#8b5cf6" />}
+          />
+           <FeatureCard
+            title="Secured Payments"
+            description="Supports multiple payment gateways with encryption and fraud detection."
+            icon={<IconHomeDollar size={32} color="#8b5cf6" />}
+          />
+          {/* // <FeatureCard />
+          // <FeatureCard />
+          // <FeatureCard /> */}
         </div>
       </div>
     </div>
