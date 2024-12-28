@@ -36,28 +36,28 @@ export default function RootLayout({
             </div>
             <div className="flex flex-col gap-1">
               <Link
-                href="/api/dashboard"
+                href="/pages/dashboard"
                 className="flex flex-row items-center px-7 py-3 gap-3 hover:bg-violet-700 rounded-lg"
               >
                 <IconLayoutDashboard color="white" size={26} />
                 <p>Dashboard</p>
               </Link>
               <Link
-                href="/api/products"
+                href="/pages/products"
                 className="flex flex-row items-center px-7 py-3 gap-3 hover:bg-violet-700 rounded-lg"
               >
                 <IconPackage color="white" size={26} />
                 <p>Products</p>
               </Link>
               <Link
-                href="/api/market"
+                href="/pages/market"
                 className="flex flex-row items-center px-7 py-3 gap-3 hover:bg-violet-700 rounded-lg"
               >
                 <IconShoppingCart color="white" size={26} />
                 <p>Market</p>
               </Link>
               <Link
-                href="/api/orders"
+                href="/pages/orders"
                 className="flex flex-row items-center px-7 py-3 gap-3 hover:bg-violet-700 rounded-lg"
               >
                 <IconListDetails color="white" size={26} />
