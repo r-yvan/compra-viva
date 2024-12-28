@@ -1,9 +1,10 @@
-import Image from "next/image";
+import React from "react";
 
-export default function Home() {
+const Home = () => {
   return (
     <div className="bg-[#050505] font-body w-full">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, necessitatibus.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta,
+      necessitatibus.
     </div>
   );
-}
+};

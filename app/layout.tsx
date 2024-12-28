@@ -8,7 +8,6 @@ import {
   IconShoppingCart,
 } from "@tabler/icons-react";
 import "./globals.css";
-import Image from "next/image";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
