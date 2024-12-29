@@ -7,7 +7,7 @@ const UsersCard = ({userType}: {userType: string}) => {
   return (
     <div className="text-white flex flex-row bg-[#151515] rounded-xl p-4 gap-5">
       <div className="flex flex-col gap-3 w-1/2">
-        <div className="px-3 py-1 bg-[#202020] w-fit rounded-full">{userType}</div>
+        <div className="px-3 py-1 w-fit bg-[#202020] rounded-full">{userType}</div>
         <div className="flex flex-col gap-2">
           <p className="text-3xl tracking-tighter">Join other {userType}</p>
           <p className="opacity-50">
@@ -27,7 +27,7 @@ const UsersCard = ({userType}: {userType: string}) => {
           </p>
         </div>
         <div>
-          <button className="px-3 flex gap-2 py-1 bg-[#202020] rounded-full">
+          <button className="px-3 flex gap-2 py-1 bg-[#362b5150] text-violet-300 rounded-full">
             <p className="opacity-50">Join others now</p>
             <IconArrowUpRightCircle className="opacity-50" />
           </button>

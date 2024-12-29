@@ -101,6 +101,9 @@ const Home = () => {
           // <FeatureCard /> */}
         </div>
       </div>
+      <div>
+        
+      </div>
     </div>
   );
 };
