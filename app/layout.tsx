@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-row font-body h-full">
-        <div className="flex flex-col bg-[#0a0a0a] gap-36 w-fit h-screen">
+        <div className="flex flex-col bg-[#0a0a0a] gap-36 w-fit h-screen border-r-[1px] border-white border-opacity-10">
           <Link href="/profile" className="flex flex-row">
             <div>
             </div>
@@ -30,9 +30,9 @@ export default function RootLayout({
               <p>Userole</p>
             </div>
           </Link>
-          <div className="flex flex-col p-8 gap-2">
+          <div className="flex flex-col p-8 gap-5">
             <div>
-              <p className="font-bold text-2xl">Pages</p>
+              <p className="flex justify-center font-bold text-2xl">Pages</p>
             </div>
             <div className="flex flex-col gap-1">
               <Link
@@ -40,28 +40,28 @@ export default function RootLayout({
                 className="flex flex-row items-center px-7 py-3 gap-3 hover:bg-violet-700 rounded-lg"
               >
                 <IconLayoutDashboard color="white" size={26} />
-                <p>Dashboard</p>
+                <p className="text-lg font-light">Dashboard</p>
               </Link>
               <Link
                 href="/pages/products"
                 className="flex flex-row items-center px-7 py-3 gap-3 hover:bg-violet-700 rounded-lg"
               >
                 <IconPackage color="white" size={26} />
-                <p>Products</p>
+                <p className="text-lg font-light">Products</p>
               </Link>
               <Link
                 href="/pages/market"
                 className="flex flex-row items-center px-7 py-3 gap-3 hover:bg-violet-700 rounded-lg"
               >
                 <IconShoppingCart color="white" size={26} />
-                <p>Market</p>
+                <p className="text-lg font-light">Market</p>
               </Link>
               <Link
                 href="/pages/orders"
                 className="flex flex-row items-center px-7 py-3 gap-3 hover:bg-violet-700 rounded-lg"
               >
                 <IconListDetails color="white" size={26} />
-                <p>Orders</p>
+                <p className="text-lg font-light">Orders</p>
               </Link>
             </div>
           </div>
