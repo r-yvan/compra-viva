@@ -20,11 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-row font-body h-full">
-        <div className="flex flex-col bg-[#0a0a0a] gap-36 w-fit h-screen border-r-[1px] border-white border-opacity-10">
+      <body className="flex flex-row font-body h-full text-white">
+        <div className="flex flex-col bg-[#0a0a0a] gap-36 w-fit border-r-[1px] border-white border-opacity-10">
           <Link href="/profile" className="flex flex-row">
-            <div>
-            </div>
+            <div></div>
             <div>
               <p>Username</p>
               <p>Userole</p>
