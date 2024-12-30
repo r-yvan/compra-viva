@@ -1,10 +1,11 @@
 import React from "react";
+import { Chart } from "./chart";
 import {
   IconBuildingBank,
   IconListDetails,
   IconHistory,
   IconChartBar,
-  IconShoppingBagCheck
+  IconShoppingBagCheck,
 } from "@tabler/icons-react";
 
 const Dashboard = () => {
@@ -40,7 +41,9 @@ const Dashboard = () => {
             <IconChartBar size={30} />
             <p className="text-2xl font-bold">Sales Graph</p>
           </div>
-          <div></div>
+          <div>
+            <Chart />
+          </div>
         </div>
         <div className="col-span-4 row-span-6 bg-[#0a0a0a] rounded-lg border border-white border-opacity-10">
           <div className="flex justify-center pt-3 gap-2">
