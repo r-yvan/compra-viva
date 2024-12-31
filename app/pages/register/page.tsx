@@ -65,7 +65,7 @@ const Register = () => {
           </label>
           <div className="relative">
             <select className="w-full bg-[#0a0a0a] outline-none p-3 pl-4 appearance-none rounded-lg border border-white border-opacity-20">
-              <option>Administrator</option>
+              <option className="bg-red-400 m-2 border border-white border-opacity-50">Administrator</option>
               <option>Buyer</option>
               <option>Seller</option>
             </select>
