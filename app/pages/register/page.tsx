@@ -1,18 +1,17 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import {
   IconMail,
   IconShieldLock,
   IconUserHexagon,
   IconCaretDown,
-  IconChartBar,
 } from "@tabler/icons-react";
-import axios from "axios";
+// import axios from "axios";
 
 const Register = () => {
-  const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [username, setUsername] = useState("");
+  // const [password, setPassword] = useState("");
 
   return (
     <div className="flex justify-center items-center bg-[#050505] w-full h-screen">
@@ -23,7 +22,7 @@ const Register = () => {
             Account
           </h1>
           <p className="opacity-80">
-            Connect to the world' s largest online market with a single click
+            Connect to the world largest online market with a single click
           </p>
         </div>
         <div className="flex flex-col">
