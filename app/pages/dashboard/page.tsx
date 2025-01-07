@@ -16,8 +16,8 @@ const Dashboard = () => {
   // const [search, setSearch] = useState("");
   return (
     <div className="flex flex-col bg-[#050505] gap-5 p-2 w-full h-full -z-10">
-      <div>
-        <p className="text-5xl font-bold pt-3 pl-3">Dashboard</p>
+      <div className="flex justify-center p-1">
+        <p className="text-5xl font-bold">Dashboard</p>
       </div>
       <div className="grid grid-cols-12 grid-rows-12 gap-2 h-full">
         <div className="col-span-3 row-span-3 bg-[#0a0a0a] rounded-lg border border-white border-opacity-10">
