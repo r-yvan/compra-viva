@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
+import profileImage from "../public/france.jpeg";
 import {
   IconLayoutDashboard,
   IconListDetails,
@@ -9,6 +10,7 @@ import {
 } from "@tabler/icons-react";
 import "./globals.css";
 import Loading from "./loading";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,13 +26,26 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex flex-row font-body h-screen text-white">
         <div className="flex flex-col bg-[#0a0a0a] gap-36 w-fit border-r-[1px] border-white border-opacity-10">
-          <Link href="/profile" className="flex flex-row">
-            <div></div>
-            <div>
-              <p>Username</p>
-              <p>Userole</p>
+          <div className="flex flex-col gap-5 pt-6 pl-6">
+            <div className="flex">
+              <p className="font-extrabold text-2xl">
+                Compra<span className="text-violet-400">Viva.</span>
+              </p>
             </div>
-          </Link>
+            <Link href="/profile" className="flex flex-row gap-2">
+              <div className="w-[50px] h-[50px] rounded-full overflow-hidden">
+                <Image src={profileImage} alt="" />
+              </div>
+              <div className="flex flex-col">
+                <div className="font-bold">
+                  <p>France NK</p>
+                </div>
+                <div>
+                  <p className="font-light text-opacity-40">Seller</p>
+                </div>
+              </div>
+            </Link>
+          </div>
           <div className="flex flex-col p-8 gap-5">
             <div>
               <p className="flex justify-center font-bold text-2xl">Pages</p>
