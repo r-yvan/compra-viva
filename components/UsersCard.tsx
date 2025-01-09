@@ -3,16 +3,18 @@ import { IconArrowUpRightCircle } from "@tabler/icons-react";
 import background from "@/public/shoes1.jpg";
 import Image from "next/image";
 
-const UsersCard = ({userType}: {userType: string}) => {
+const UsersCard = ({ userType }: { userType: string }) => {
   return (
     <div className="text-white flex flex-row bg-[#151515] rounded-xl p-4 gap-5">
       <div className="flex flex-col gap-3 w-1/2">
-        <div className="px-3 py-1 w-fit bg-[#202020] rounded-full">{userType}</div>
+        <div className="px-3 py-1 w-fit bg-[#202020] rounded-full">
+          {userType}
+        </div>
         <div className="flex flex-col gap-2">
           <p className="text-3xl tracking-tighter">Join other {userType}</p>
           <p className="opacity-50">
-            There is a large community of {userType} out there using CompraViva and
-            still making profit out of it
+            There is a large community of {userType} out there using CompraViva
+            and still making profit out of it
           </p>
         </div>
         <div className="flex items-center">
