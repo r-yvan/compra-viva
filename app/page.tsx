@@ -1,7 +1,10 @@
 import { GridPatternDashed } from "@/components/GridPatternDashed";
 import {
+  IconChartPie,
+  IconCoins,
   IconComet,
   IconHomeDollar,
+  IconTruck,
   IconUserHexagon,
 } from "@tabler/icons-react";
 import TopNavigationBar from "@/components/TopNavigationBar";
@@ -84,17 +87,17 @@ const Home = () => {
           <FeatureCard
             title="Online Trading"
             description="This ecommerce is good since it helps modern and remote trading"
-            icon={<IconHomeDollar size={32} color="#8b5cf6" />}
+            icon={<IconChartPie size={32} color="#8b5cf6" />}
           />
           <FeatureCard
             title="Order Tracking"
             description="Keeps customers informed with live updates on their shipment's status"
-            icon={<IconHomeDollar size={32} color="#8b5cf6" />}
+            icon={<IconTruck size={32} color="#8b5cf6" />}
           />
            <FeatureCard
             title="Secured Payments"
             description="Supports multiple payment gateways with encryption and fraud detection."
-            icon={<IconHomeDollar size={32} color="#8b5cf6" />}
+            icon={<IconCoins size={32} color="#8b5cf6" />}
           />
           {/* // <FeatureCard />
           // <FeatureCard />
@@ -102,7 +105,7 @@ const Home = () => {
         </div>
       </div>
       <div>
-        
+
       </div>
     </div>
   );
