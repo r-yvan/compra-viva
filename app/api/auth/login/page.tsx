@@ -104,7 +104,7 @@ const Login = () => {
           <div className="flex justify-center">
             <p>
               Don't have an account?{" "}
-              <a href="/api/auth/register" className="underline text-violet-700">
+              <a href="/pages/register" className="underline text-violet-700">
                 Signup
               </a>
             </p>

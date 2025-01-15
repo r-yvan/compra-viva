@@ -1,5 +1,5 @@
 "use client";
-import { registrationSchema } from "../../api/register/schema";
+import { registrationSchema } from "./schema";
 import { Bars } from "react-loader-spinner";
 import { useFormik } from "formik";
 import React from "react";
@@ -16,19 +16,21 @@ const Register = () => {
   const router = useRouter();
   const onFormSubmit = async (values: any) => {
     await axios.post("/api/register", values);
-    // switch (values.role) {
-    //   case "administrator":
-    //     router.push("/admin/pages/dashboard");
-    //     break;
-    //   case "seller":
-    //     router.push("/seller/pages/dashboard");
-    //     break;
-    //   case "buyer":
-    //     router.push("/buyer/pages/dashboard");
-    //     break;
-    //   default:
-    //     router.push("/");
-    // }
+    console.log(values);
+    switch (values.role) {
+      case "administrator":
+        router.push("/admin/pages/dashboard");
+        break;
+      case "seller":
+        router.push("/seller/pages/dashboard");
+        break;
+      case "buyer":
+        router.push("/buyer/pages/dashboard");
+        break;
+      default:
+        router.push("/");
+    }
+
   };
 
   const {
