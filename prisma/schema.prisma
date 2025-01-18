@@ -14,7 +14,7 @@ datasource db {
 }
 
 model users {
-  user_id  Int    @id @default(autoincrement())
+  id  Int    @id @default(autoincrement())
   username String @unique
   email    String @unique
   password String
@@ -22,11 +22,11 @@ model users {
 }
 
 model products {
-  product_id   Int    @id @default(autoincrement())
+  id   Int    @id @default(autoincrement())
   name         String @unique
-  product_type String
-  description  String
   price        Float
+  category String
+  description  String
   quantity     Int
   seller_id    Int
   image_url    String
