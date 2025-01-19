@@ -1,3 +1,4 @@
+import ProductCard from "@/components/ProductCard";
 import React from "react";
 
 const Products = () => {
@@ -7,10 +8,13 @@ const Products = () => {
         <p className="text-5xl font-bold">Products</p>
       </div>
       <div className="flex flex-row gap-2 justify-center">
-        <input type="text" /><input type="text" /><input type="text" /><input type="text" />
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
       </div>
       <div>
-
+        <ProductCard />
       </div>
     </div>
   );
