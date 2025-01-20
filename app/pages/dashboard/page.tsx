@@ -11,6 +11,7 @@ import {
   IconSearch,
   IconGripVertical,
 } from "@tabler/icons-react";
+import InputField from "@/components/InputField";
 
 const Dashboard = () => {
   // const [search, setSearch] = useState("");
@@ -82,14 +83,11 @@ const Dashboard = () => {
               <p className="text-2xl font-bold">Sold Products</p>
             </div>
             <div className="flex flex-row items-center gap-3">
-              <form className="flex relative">
-                <input
-                  type="text"
-                  placeholder="Search"
-                  className="bg-[#151515] rounded-lg py-2 px-3 border border-white border-opacity-10"
-                />
-                <IconSearch className="absolute right-3 top-2 opacity-50 pointer-events-none" />
-              </form>
+              <InputField
+                inputType="text"
+                placeholder="Search"
+                icon={<IconSearch size={30} />}
+              />
               <div>
                 <IconGripVertical className="mr-5 opacity-50" />
               </div>
