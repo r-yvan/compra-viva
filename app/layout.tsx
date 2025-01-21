@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-row font-body h-screen text-white">
+      <body className="flex flex-row font-body h-full text-white">
         <div className="flex flex-col bg-[#0a0a0a] gap-36 w-fit border-r-[1px] border-white border-opacity-10">
           <div className="flex flex-col gap-5 pt-6 pl-6">
             <div className="flex">
