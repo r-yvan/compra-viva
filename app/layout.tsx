@@ -63,7 +63,7 @@ export default function RootLayout({
                 className="flex flex-row items-center px-7 py-3 gap-3 hover:bg-violet-700 rounded-lg"
               >
                 <IconPackage color="white" size={26} />
-                <p className="text-lg font-light">Products</p>
+                <p className="text-lg font-light">Cart</p>
               </Link>
               <Link
                 href="/pages/market"
