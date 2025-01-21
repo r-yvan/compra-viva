@@ -76,7 +76,7 @@ const Register = () => {
         <div className="flex justify-center">
           <button
             type="submit"
-            className="px-10 py-3  bg-violet-700 rounded-lg"
+            className="px-10 py-3 bg-violet-700 rounded-lg"
           >
             Register
           </button>

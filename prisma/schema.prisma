@@ -11,11 +11,36 @@ generator client {
 datasource db {
   provider = "postgres"
   url      = env("DATABASE_URL")
+
 }
 
-model Users {
-  id           Int   @id @default(autoincrement())
+model buyers {
+  buyer_id           Int   @id @default(autoincrement())
   username     String   @unique
   email        String   @unique
   password     String
+}
+
+model administrators {
+  admin_id           Int   @id @default(autoincrement())
+  username     String   @unique
+  email        String   @unique
+  password     String
+}
+
+model sellers {
+  seller_id           Int   @id @default(autoincrement())
+  username     String   @unique
+  email        String   @unique
+  password     String
+}
+
+model products {
+  product_id Int @id @default(autoincrement())
+  name        String
+  product_type String
+  description String
+  price       Float
+  quantity    Int
+  seller_id  Int
 }
