@@ -42,4 +42,5 @@ model products {
   price        Float
   quantity     Int
   seller_id    Int
+  image_url    String
 }
