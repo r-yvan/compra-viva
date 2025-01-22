@@ -2,6 +2,16 @@ import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/prisma/client";
 import { schema } from "./schema";
 
+interface RequestBody {
+  name: string;
+  product_type: string;
+  description: string;
+  price: number;
+  quantity: number;
+  seller_id: number;
+  image_url: string;
+}
+
 export const GET = async (request: NextRequest) => {
   try {
     const result = await prisma.products.findMany();
@@ -14,30 +24,41 @@ export const GET = async (request: NextRequest) => {
 export const POST = async (request: NextRequest) => {
   try {
     const body = await request.json();
-    const result = schema.safeParse(body);
-    if (!result.success)
+    const validationResult = schema.safeParse(body);
+    if (!validationResult.success)
       return NextResponse.json({
-        error: result.error,
+        error: validationResult.error,
       });
-
-    const newProduct = await prisma.products.create({
-      data: {
-        name: body.name,
-        product_type: body.product_type,
-        description: body.description,
-        price: body.price,
-        quantity: body.quantity,
-        seller_id: body.seller_id,
-        image_url: body.image_url,
-      },
+    const productFromDb = await prisma.products.findUnique({
+      where: { name: body.name },
     });
-    return NextResponse.json(newProduct, { status: 201 });
-    
+
+    if (productFromDb)
+      return NextResponse.json(
+        {
+          error: "Product already exists",
+        },
+        { status: 400 }
+      );
+    else {
+      const newProduct = await prisma.products.create({
+        data: {
+          name: body.name,
+          product_type: body.product_type,
+          description: body.description,
+          price: body.price,
+          quantity: body.quantity,
+          seller_id: body.seller_id,
+          image_url: body.image_url,
+        },
+      });
+      return NextResponse.json(newProduct, { status: 200 });
+    }
   } catch (err) {
     console.log(err);
     return NextResponse.json(
       { error: err, message: "Something went wrong!!" },
-      { status: 500 }
+      { status: 400 }
     );
   }
 };

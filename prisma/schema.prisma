@@ -36,7 +36,7 @@ model sellers {
 
 model products {
   product_id   Int    @id @default(autoincrement())
-  name         String
+  name         String @unique
   product_type String
   description  String
   price        Float
