@@ -20,7 +20,7 @@ const ProductCard = ({ image, likes, name, description, price }: Props) => {
   const [isLoading, setIsLoading] = useState(false);
   return (
     <div className="relative overflow-hidden">
-      <div className="lighter relative flex flex-col gap-3 w-80 p-2 bg-[#0f0f0f] rounded-xl border border-white border-opacity-5">
+      <div className="lighter relative flex flex-col gap-3 h-[420px] w-80 p-2 bg-[#0f0f0f] rounded-xl border border-white border-opacity-5">
         <div className="relative w-fit rounded-lg overflow-hidden">
           <Image src={image} alt="" width={300} height={300} className="w-80" />
           <div className="absolute top-1 right-1 opacity-50 w-fit h-fit bg-[#151515] p-1 rounded-full">
@@ -35,7 +35,7 @@ const ProductCard = ({ image, likes, name, description, price }: Props) => {
           <div>
             <p className="text-lg font-bold">{name}</p>
           </div>
-          <div>
+          <div className="h-12">
             <p className="opacity-50 text-sm">{description}</p>
           </div>
           <div className="bg-[#151515] w-fit px-3 py-1 rounded-full">

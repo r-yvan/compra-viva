@@ -1,3 +1,4 @@
+"use client";
 import InputField from "@/components/InputField";
 import ProductCard from "@/components/ProductCard";
 import {
@@ -6,9 +7,30 @@ import {
   IconAlignRight,
   IconHeart,
 } from "@tabler/icons-react";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
+interface Product {
+  product_id: number;
+  name: string;
+  description: string;
+  product_type: string;
+  price: number;
+  quantity: number;
+  image: string;
+}
 const Products = () => {
+  const [products, setProducts] = useState<Product[]>([]);
+  const fetchProducts = async () => {
+    const productsFromDb = await fetch("http://localhost:3001/api/products");
+    const prods = await productsFromDb.json();
+    setProducts(prods);
+    console.log(prods);
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
   return (
     <div className="flex flex-col bg-[#0a0a0a] w-full">
       <div className="flex justify-center p-1">
@@ -54,14 +76,17 @@ const Products = () => {
         />
       </div>
       <div></div>
-      <div className="p-10">
-        <ProductCard
-          description="This is one of the best nike shoes on the market try them..."
-          name="Nike Shoes"
-          likes={930}
-          price={88.999}
-          image="/shoes1.jpg"
-        />
+      <div className="flex p-10 w-full h-full flex-row gap-10">
+        {products.map((product) => (
+          <ProductCard
+            key={product.product_id}
+            description={product.description}
+            name={product.name}
+            likes={930}
+            price={product.price}
+            image="/shoes1.jpg"
+          />
+        ))}
       </div>
     </div>
   );
