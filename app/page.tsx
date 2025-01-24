@@ -1,12 +1,25 @@
 import TopNavigationBar from "@/components/TopNavigationBar";
 import React from "react";
 
-
 const Home = () => {
   return (
-    <div className="relative bg-[#050505] text-white font-body w-full h-screen flex justify-center align-center">
-      <TopNavigationBar />
-      <p className="text-2xl bg-transparent font-bold font-body self-center">Welcome to the most widely supported ecommerce platform</p>
+    <div className="flex flex-col w-full h-screen bg-[#050505]">
+      <div className="flex justify-center">
+        <TopNavigationBar />
+      </div>
+      <div className="flex gradient-grid flex-col w-full items-center justify-center pt-16">
+        <div className="spot-light relative">
+          <div className="flex items-center flex-col h-96">
+            <h1 className="text-4xl font-bold">
+              Make purchase and sell to world wide market via Compra
+              <span className="text-violet-500">Viva</span>
+            </h1>
+            <p className="text-2xl">
+              A place where you can buy and sell anything you want.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

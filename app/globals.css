@@ -112,3 +112,35 @@ body {
   backdrop-filter: blur(100px);
   border: 1px solid #FFFFFF25;
 }
+
+.spot-light::before {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 100px;
+  top: 0;
+  left: calc(100% / 9);
+  border-radius: 50%;
+  background-color: white;
+  filter: blur(200px);
+}
+
+
+.gradient-grid {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, #FFFFFF10 1px, transparent 1px),
+    linear-gradient(to bottom, #FFFFFF10 1px, transparent 1px); 
+  position: relative;  
+}
+
+.gradient-grid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, transparent, rgba(0,0,0,1));
+  pointer-events: none;
+}
