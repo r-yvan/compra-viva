@@ -4,12 +4,13 @@ import { sellerSchema, buyerSchema, administratorSchema } from "./schema";
 import bcrypt from "bcrypt";
 
 export const POST = async (request: NextRequest) => {
-  const { role, password} = await request.json();
-  const validationResult = await schema.safeParse(body);
-  if (validationResult.success) {
-    const user = await prisma.users.findUnique({
-      where: { email: body.email },
-    });
+  const body = await request.json();
+  if (body.role == "seller")
+    var validationResult = await sellerSchema.safeParse(body);
+    if (validationResult.success) {
+      const user = await prisma.users.findUnique({
+        where: { email: body.email },
+      });
     if (user) return NextResponse.json({ error: "User already exists!!" });
     else {
       const passwordhash = await bcrypt.hash(body.password, 10);
