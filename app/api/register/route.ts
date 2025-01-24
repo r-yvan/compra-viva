@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/prisma/client";
-import { schema } from "./schema";
+import { sellerSchema, buyerSchema, administratorSchema } from "./schema";
 import bcrypt from "bcrypt";
 
 export const POST = async (request: NextRequest) => {
-  const body = await request.json();
+  const { role, password} = await request.json();
   const validationResult = await schema.safeParse(body);
   if (validationResult.success) {
     const user = await prisma.users.findUnique({
@@ -19,9 +19,8 @@ export const POST = async (request: NextRequest) => {
           username: body.username,
           password: passwordhash,
         },
-      })
+      });
       return NextResponse.json(newUser);
     }
-  }
-  else return NextResponse.json({ error: "Bad request!!" }, { status: 400 });
+  } else return NextResponse.json({ error: "Bad request!!" }, { status: 400 });
 };
