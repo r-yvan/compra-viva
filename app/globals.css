@@ -90,3 +90,11 @@ body {
   background-color: white;
   filter: blur(100px);
 }
+
+.rounded-lighter::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  box-shadow: 0px 0px 0px 200px #8A2BE2;
+}

@@ -10,8 +10,7 @@ export const POST = async (request: NextRequest) => {
     const user = await prisma.users.findUnique({
       where: { email: body.email },
     });
-    if (user) 
-      return NextResponse.json({ error: "User already exists!!" });
+    if (user) return NextResponse.json({ error: "User already exists!!" });
     else {
       const passwordhash = await bcrypt.hash(body.password, 10);
       const newUser = await prisma.users.create({
