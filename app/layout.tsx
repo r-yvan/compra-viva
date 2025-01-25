@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-row w-full font-body h-full text-white justify-center items-center">
+      <body className="flex flex-row w-screen font-body h-screen text-white justify-center items-center">
         <Suspense fallback={<Loading />}>{children}</Suspense>
       </body>
     </html>

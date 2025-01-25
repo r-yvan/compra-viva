@@ -52,8 +52,7 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Inter", "Arial", "sans-serif"],
-        mono: ["JetBrains Mono", "SFMono", "Menlo", "monospace"],
+        mono: ["JetBrains Mono"],
         body: ["Geist"],
       },
       borderRadius: {

@@ -116,10 +116,10 @@ body {
 .spot-light::before {
   content: "";
   position: absolute;
-  width: 90%;
+  width: 50%;
   height: 100px;
   top: 0;
-  left: calc(100% / 9);
+  left: 30%;
   border-radius: 50%;
   background-color: white;
   filter: blur(200px);
