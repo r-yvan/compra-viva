@@ -1,16 +1,20 @@
 import React from "react";
 import Link from "next/link";
-import profileImage from "../public/france.jpeg";
-import {
-  IconLayoutDashboard,
-  IconListDetails,
-  IconPackage,
-  IconShoppingCart,
-} from "@tabler/icons-react";
-import "./globals.css";
+import "@/globals.css";
 import Image from "next/image";
 
-const SideNavigationBar = () => {
+interface SideNavigationBarProps {
+  username: string;
+  profileImage: any;
+  userRole: string;
+  pages: { pageUrl: string; pageLabel: string; pageIcon: JSX.Element }[];
+}
+const SideNavigationBar = ({
+  username,
+  profileImage,
+  userRole,
+  pages,
+}: SideNavigationBarProps) => {
   return (
     <div className="flex flex-col bg-[#0a0a0a] gap-36 w-fit border-r-[1px] border-white border-opacity-10">
       <div className="flex flex-col gap-5 pt-6 pl-6">
@@ -25,10 +29,18 @@ const SideNavigationBar = () => {
           </div>
           <div className="flex flex-col">
             <div className="font-bold">
-              <p>France NK</p>
+              <p>{username}</p>
             </div>
             <div>
-              <p className="font-light text-opacity-40">Seller</p>
+              {userRole == "buyer" && (
+                <p className="font-light text-opacity-40">Buyer</p>
+              )}
+              {userRole == "seller" && (
+                <p className="font-light text-opacity-40">Seller</p>
+              )}
+              {userRole == "admin" && (
+                <p className="font-light text-opacity-40">Administrator</p>
+              )}
             </div>
           </div>
         </Link>
@@ -38,34 +50,15 @@ const SideNavigationBar = () => {
           <p className="flex justify-center font-bold text-2xl">Pages</p>
         </div>
         <div className="flex flex-col gap-1">
-          <Link
-            href="/pages/dashboard"
-            className="flex flex-row items-center px-7 py-3 gap-3 hover:bg-violet-700 rounded-lg"
-          >
-            <IconLayoutDashboard color="white" size={26} />
-            <p className="text-lg font-light">Dashboard</p>
-          </Link>
-          <Link
-            href="/pages/products"
-            className="flex flex-row items-center px-7 py-3 gap-3 hover:bg-violet-700 rounded-lg"
-          >
-            <IconPackage color="white" size={26} />
-            <p className="text-lg font-light">Cart</p>
-          </Link>
-          <Link
-            href="/pages/market"
-            className="flex flex-row items-center px-7 py-3 gap-3 hover:bg-violet-700 rounded-lg"
-          >
-            <IconShoppingCart color="white" size={26} />
-            <p className="text-lg font-light">Market</p>
-          </Link>
-          <Link
-            href="/pages/orders"
-            className="flex flex-row items-center px-7 py-3 gap-3 hover:bg-violet-700 rounded-lg"
-          >
-            <IconListDetails color="white" size={26} />
-            <p className="text-lg font-light">Orders</p>
-          </Link>
+          {pages.map((page) => (
+            <Link
+              href={"/pages/" + page.pageUrl}
+              className="flex flex-row items-center px-7 py-3 gap-3 hover:bg-violet-700 rounded-lg"
+            >
+              <div>{page.pageIcon}</div>
+              <p className="text-lg font-light">{page.pageLabel}</p>
+            </Link>
+          ))}
         </div>
       </div>
     </div>
