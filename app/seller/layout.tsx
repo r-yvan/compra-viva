@@ -1,28 +1,28 @@
 import SideNavigationBar from "@/components/SideNavigationBar";
 import profileImg from "@/public/france.jpeg";
 import React from "react";
-import { IconDashboard } from "@tabler/icons-react";
+import { IconLayoutDashboard, IconListDetails, IconPackage } from "@tabler/icons-react";
 const SellerInterfaceLayout = () => {
   const pages = [
     {
       pageUrl: "dashboard",
       pageLabel: "Dashboard",
-      pageIcon: <IconDashboard />,
+      pageIcon: <IconLayoutDashboard />,
     },
     {
       pageUrl: "products",
       pageLabel: "Products",
-      pageIcon: <IconDashboard />,
+      pageIcon: <IconPackage />,
     },
     {
       pageUrl: "orders",
       pageLabel: "Orders",
-      pageIcon: <IconDashboard />,
+      pageIcon: <IconListDetails />,
     },
     {
       pageUrl: "dashboard",
       pageLabel: "Dashboard",
-      pageIcon: <IconDashboard />,
+      pageIcon: <IconLayoutDashboard />,
     },
   ];
   return (
