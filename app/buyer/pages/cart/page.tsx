@@ -18,7 +18,7 @@ interface Product {
   quantity: number;
   image: string;
 }
-const Products = () => {
+const Cart = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const fetchProducts = async () => {
     const productsFromDb = await fetch("http://localhost:3001/api/products");
@@ -34,7 +34,7 @@ const Products = () => {
   return (
     <div className="flex flex-col bg-[#0a0a0a] w-full">
       <div className="flex justify-center p-1">
-        <p className="text-5xl font-bold">Products</p>
+        <p className="text-5xl font-bold">Cart</p>
       </div>
       <div className="flex flex-row gap-1 justify-start pl-10 mt-5">
         <InputField
@@ -92,4 +92,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default Cart;
