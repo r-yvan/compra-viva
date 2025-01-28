@@ -52,6 +52,7 @@ const SideNavigationBar = ({
         <div className="flex flex-col gap-1">
           {pages.map((page) => (
             <Link
+              key={page.pageUrl}
               href={"./" + page.pageUrl}
               className="flex flex-row items-center px-7 py-3 gap-3 hover:bg-violet-700 rounded-lg"
             >

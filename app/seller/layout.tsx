@@ -1,8 +1,13 @@
 import SideNavigationBar from "@/components/SideNavigationBar";
 import profileImg from "@/public/france.jpeg";
 import React from "react";
-import { IconLayoutDashboard, IconListDetails, IconPackage } from "@tabler/icons-react";
-const SellerInterfaceLayout = () => {
+import {
+  IconLayoutDashboard,
+  IconListDetails,
+  IconPackage,
+} from "@tabler/icons-react";
+
+const SellerInterfaceLayout = ({ children }: { children: React.ReactNode }) => {
   const pages = [
     {
       pageUrl: "dashboard",
@@ -19,11 +24,6 @@ const SellerInterfaceLayout = () => {
       pageLabel: "Orders",
       pageIcon: <IconListDetails />,
     },
-    {
-      pageUrl: "dashboard",
-      pageLabel: "Dashboard",
-      pageIcon: <IconLayoutDashboard />,
-    },
   ];
   return (
     <div className="flex flex-row w-screen h-screen bg-[#050505]">
@@ -33,6 +33,7 @@ const SellerInterfaceLayout = () => {
         pages={pages}
         userRole="seller"
       />
+      <div>{children}</div>
     </div>
   );
 };
