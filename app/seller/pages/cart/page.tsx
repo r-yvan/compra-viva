@@ -18,7 +18,7 @@ interface Product {
   quantity: number;
   image: string;
 }
-const Products = () => {
+const Cart = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const fetchProducts = async () => {
     const productsFromDb = await fetch("http://localhost:3001/api/products");
@@ -92,4 +92,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default Cart;

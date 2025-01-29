@@ -15,8 +15,8 @@ const SellerInterfaceLayout = ({ children }: { children: React.ReactNode }) => {
       pageIcon: <IconLayoutDashboard />,
     },
     {
-      pageUrl: "products",
-      pageLabel: "Products",
+      pageUrl: "cart",
+      pageLabel: "Cart",
       pageIcon: <IconPackage />,
     },
     {
