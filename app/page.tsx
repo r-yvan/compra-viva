@@ -1,6 +1,7 @@
 import { GridPatternDashed } from "@/components/GridPatternDashed";
 import TopNavigationBar from "@/components/TopNavigationBar";
 import React from "react";
+import Image from "next/image";
 
 const Home = () => {
   return (
@@ -8,9 +9,11 @@ const Home = () => {
       <div className="flex justify-center w-full pt-1">
         <TopNavigationBar />
       </div>
-      <div className="flex flex-row h-full">
+      <div className="flex flex-row h-full relative">
         <GridPatternDashed />
-        <div className="flex w-1/2 h-full">gb</div>
+        <div className="flex w-[55%] h-auto absolute right-0">
+          <Image alt="" src={require("@/public/background.png")} className="w-full h-auto"></Image>
+        </div>
       </div>
     </div>
   );

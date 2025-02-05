@@ -21,7 +21,7 @@ interface Product {
 const Cart = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const fetchProducts = async () => {
-    const productsFromDb = await fetch("http://localhost:3001/api/products");
+    const productsFromDb = await fetch("http://localhost:3000/api/products");
     const prods = await productsFromDb.json();
     setProducts(prods);
     console.log(prods);
@@ -87,6 +87,14 @@ const Cart = () => {
             image="/shoes1.jpg"
           />
         ))}
+        <ProductCard
+          key={1}
+          description="Dell XPS 14 one of the best pc in this year, ranked 7th place"
+          name="Dell XPS 14"
+          likes={980}
+          price={3200}
+          image="/shoes1.jpg"
+        />
       </div>
     </div>
   );
