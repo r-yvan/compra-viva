@@ -1,13 +1,14 @@
-// types/next-auth.d.ts or next-auth.d.ts
+// types/next-auth.d.ts (or next-auth.d.ts)
 import NextAuth from "next-auth";
 
+// Extending the session interface to add custom properties like `id` and `role`
 declare module "next-auth" {
   interface Session {
     user: {
-      id: string;
+      id: string; // Ensure user has an id
       name: string;
       email: string;
-      role: "admin" | "seller" | "buyer";
+      role: "administrator" | "seller" | "buyer";
     };
   }
 
@@ -15,13 +16,13 @@ declare module "next-auth" {
     id: string;
     name: string;
     email: string;
-    role: "admin" | "seller" | "buyer";
+    role: "administrator" | "seller" | "buyer";
   }
 }
 
 declare module "next-auth/jwt" {
   interface JWT {
     id: string;
-    role: "admin" | "seller" | "buyer";
+    role: "administrator" | "seller" | "buyer";
   }
 }

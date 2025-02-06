@@ -1,4 +1,5 @@
 import NextAuth from "next-auth";
+import { User } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import bcrypt from "bcrypt";
@@ -31,7 +32,12 @@ const handler = NextAuth({
         );
 
         if (user && passwordMatch) {
-          return { id: user.user_id.toString(), name: user.username };
+          return {
+            id: user.id.toString(),
+            name: user.username,
+            email: user.email,
+            role: user.role,
+          } as User;
         } else {
           return null;
         }
@@ -46,15 +52,15 @@ const handler = NextAuth({
   callbacks: {
     async session({ session, token }) {
       if (token) {
-        session.user.id = token.sub;
-        session.user.role = token.role;
+        session.user.id = token.id as string;
+        session.user.role = token.role as "administrator" | "seller" | "buyer";
       }
       return session;
     },
     async jwt({ token, user }) {
       if (user) {
-        const u = user as { id: string; role: string };
-        token.role = u.role;
+        token.id = user.id;
+        token.role = user.role;
       }
       return token;
     },
