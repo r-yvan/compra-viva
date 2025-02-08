@@ -78,6 +78,7 @@ body {
   height: 40px;
   background-color: white;
   filter: blur(200px);
+  z-index: -1;
 }
 
 .lighter::before {
@@ -89,6 +90,17 @@ body {
   height: 50px;
   background-color: white;
   filter: blur(100px);
+}
+
+.lighter-2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(100% / 2.5);
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  filter: blur(60px);
 }
 
 .top-navigation-bar::before {
@@ -144,3 +156,5 @@ body {
   background: radial-gradient(circle, transparent, rgba(0,0,0,1));
   pointer-events: none;
 }
+
+
