@@ -5,11 +5,11 @@ import { div } from "framer-motion/client";
 
 const FeatureCard = () => {
   return (
-    <div className="bg-gradient-to-b overflow-hidden from-[#FFFFFF60] via-[#FFFFFF20] to-[#FFFFFF10] p-[1px] w-72 rounded-lg h-48 backdrop-blur-md relative">
-      <div className="bg-[#0A0A0A] p-2 lighter-2 rounded-lg flex flex-col gap-2 w-full h-full">
+    <div className="flex flex-col p-[1px] w-72 rounded-lg h-48 backdrop-blur-md relative">
+      <div className="bg-[#0A0A0A] p-2 w-72 h-48 border border-[#FFFFFF20] rounded-lg flex flex-col gap-2">
         <div className="flex justify-center">
-          <div className="p-3 rounded-full bg-violet-400 bg-opacity-25 border border-[#FFFFFF20]">
-            <IconCoin size={32}/>
+          <div className="p-3 rounded-full bg-[#1A1A1A] border border-[#FFFFFF20]">
+            <IconCoin size={32} className="text-violet-500"/>
           </div>
         </div>
         <div className="flex justify-center">
