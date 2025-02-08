@@ -95,11 +95,11 @@ body {
 .lighter-2::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: -20px;
   left: calc(100% / 2.5);
   width: 50px;
   height: 50px;
-  background-color: white;
+  background-color: #FFFFFF;
   filter: blur(60px);
 }
 

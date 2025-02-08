@@ -8,7 +8,7 @@ import FeatureCard from "@/components/FeatureCard";
 
 const Home = () => {
   return (
-    <div className="flex flex-col gap-10 w-full h-fit bg-[#050505]">
+    <div className="flex flex-col gap-10 w-full h- bg-[#050505]">
       <div className="flex flex-col gap-10 w-full h-full bg-[#050505]">
         <div className="flex justify-center w-full pt-1">
           <TopNavigationBar />
@@ -29,7 +29,10 @@ const Home = () => {
             <span>Features</span>
           </p>
         </div>
-        <div>
+        <div className="">
+          <FeatureCard />
+          <FeatureCard />
+          <FeatureCard />
           <FeatureCard />
         </div>
       </div>
