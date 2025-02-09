@@ -3,6 +3,7 @@ import { registrationSchema } from "./schema";
 import { Bars } from "react-loader-spinner";
 import { useFormik } from "formik";
 import React from "react";
+import { signIn } from "next-auth/react";
 import {
   IconMail,
   IconShieldLock,
@@ -16,21 +17,13 @@ const Register = () => {
   const router = useRouter();
   const onFormSubmit = async (values: any) => {
     await axios.post("/api/register", values);
-    console.log(values);
-    switch (values.role) {
-      case "administrator":
-        router.push("/admin/pages/dashboard");
-        break;
-      case "seller":
-        router.push("/seller/pages/dashboard");
-        break;
-      case "buyer":
-        router.push("/buyer/pages/dashboard");
-        break;
-      default:
-        router.push("/");
-    }
-
+    // await signIn("your credentials", {
+    //   redirect: true,
+    //   email: values.email,
+    //   password: values.password,
+    //   callbackUrl: `/${values.role}/pages/dashboard`,
+    // });
+    // router.push(`/auth/signin?callbackUrl=/pages/${values.role}/dashboard`);
   };
 
   const {
@@ -144,7 +137,7 @@ const Register = () => {
                 className="w-full bg-[#0A0A0A50] outline-none p-3 pl-4 appearance-none rounded-lg border border-white border-opacity-20"
               >
                 <option
-                  value="administrator"
+                  value="admin"
                   className="bg-red-400 m-2 border border-white border-opacity-50"
                 >
                   Administrator
