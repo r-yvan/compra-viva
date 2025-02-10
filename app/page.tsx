@@ -34,7 +34,9 @@ const Home = () => {
             <p className="text-4xl text-left tracking-tighter font-medium">
               <span className="text-5xl text-violet-500 font-bold">Join</span>{" "}
               community of traders on a world wide{" "}
-              <span className="bg-violet-600 rounded-sm text-[34px] px-2">Market.</span>
+              <span className="bg-violet-600 rounded-sm text-[34px] px-2">
+                Market.
+              </span>
             </p>
           </div>
           <div>
