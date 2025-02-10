@@ -20,6 +20,30 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      <div>
+        <div className="flex justify-center">
+          <p className="text-3xl lighter bg-white bg-opacity-5 backdrop-blur-sm items-center px-1 py-1 rounded-full border border-[#FFFFFF20] pr-4 flex flex-row gap-3 font-semibold">
+            <span className="h-full w-full p-2 bg-violet-400 bg-opacity-25 border border-[#FFFFFF20] rounded-full">
+              <IconUserHexagon size={28} />
+            </span>
+            <span>Users</span>
+          </p>
+        </div>
+        <div className="px-32">
+          <div className="w-1/3">
+            <p className="text-4xl text-left tracking-tighter font-medium">
+              <span className="text-5xl text-violet-500 font-bold">Join</span>{" "}
+              community of traders on a world wide{" "}
+              <span className="bg-violet-600 rounded-sm text-[34px] px-2">Market.</span>
+            </p>
+          </div>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
       <div className="flex flex-col py-10 gap-10">
         <div className="flex justify-center">
           <p className="text-3xl lighter bg-white bg-opacity-5 backdrop-blur-sm items-center px-1 py-1 rounded-full border border-[#FFFFFF20] pr-4 flex flex-row gap-3 font-semibold">
@@ -34,16 +58,6 @@ const Home = () => {
           <FeatureCard />
           <FeatureCard />
           <FeatureCard />
-        </div>
-      </div>
-      <div>
-      <div className="flex justify-center">
-          <p className="text-3xl lighter bg-white bg-opacity-5 backdrop-blur-sm items-center px-1 py-1 rounded-full border border-[#FFFFFF20] pr-4 flex flex-row gap-3 font-semibold">
-            <span className="h-full w-full p-2 bg-violet-400 bg-opacity-25 border border-[#FFFFFF20] rounded-full">
-              <IconUserHexagon size={28} />
-            </span>
-            <span>Users</span>
-          </p>
         </div>
       </div>
     </div>
