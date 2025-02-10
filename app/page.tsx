@@ -20,7 +20,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
       <div>
         <div className="flex justify-center">
           <p className="text-3xl lighter bg-white bg-opacity-5 backdrop-blur-sm items-center px-1 py-1 rounded-full border border-[#FFFFFF20] pr-4 flex flex-row gap-3 font-semibold">
