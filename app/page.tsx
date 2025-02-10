@@ -1,10 +1,11 @@
 import { GridPatternDashed } from "@/components/GridPatternDashed";
-import TopNavigationBar from "@/components/TopNavigationBar";
-import React from "react";
-import Image from "next/image";
-import decorator from "@/public/background.png";
 import { IconComet, IconUserHexagon } from "@tabler/icons-react";
+import TopNavigationBar from "@/components/TopNavigationBar";
 import FeatureCard from "@/components/FeatureCard";
+import decorator from "@/public/background.png";
+import UsersCard from "@/components/UsersCard";
+import Image from "next/image";
+import React from "react";
 
 const Home = () => {
   return (
