@@ -15,10 +15,9 @@ const Register = () => {
   const onFormSubmit = async (values: any, actions: any) => {
     try {
       await axios.post("/register/api", values);
-      console.log(actions);
-      console.log(values);
-    } catch (error) {
-      console.log(error);
+      actions.resetForm();
+    } catch (error: any) {
+      actions.setFieldError("email", "User with this email already exists!!");
     }
   };
 
@@ -74,9 +73,7 @@ const Register = () => {
                 }`}
               />
               {errors.username && touched.username ? (
-                <p className="text-red-400 text-sm">
-                  Username must not be less than 3 characters
-                </p>
+                <p className="text-red-400 text-sm">{errors.username}</p>
               ) : null}
             </div>
           </div>
@@ -97,7 +94,7 @@ const Register = () => {
                 }`}
               />
               {errors.email && touched.email ? (
-                <p className="text-red-400 text-sm">Invalid email</p>
+                <p className="text-red-400 text-sm">{errors.email}</p>
               ) : null}
             </div>
           </div>
@@ -118,9 +115,7 @@ const Register = () => {
                 }`}
               />
               {errors.password && touched.password ? (
-                <p className="text-red-400 text-sm">
-                  Password must not be less than 3 characters
-                </p>
+                <p className="text-red-400 text-sm">{errors.password}</p>
               ) : null}
             </div>
           </div>
