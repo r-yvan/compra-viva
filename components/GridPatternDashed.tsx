@@ -3,6 +3,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { GridPattern } from "@/components/ui/grid-pattern";
 import { IconRun } from "@tabler/icons-react";
+import Link from "next/link";
 
 export function GridPatternDashed() {
   return (
@@ -33,10 +34,13 @@ export function GridPatternDashed() {
             everyday essentials, we’ve got you covered.
           </p>
           <div className="z-10">
-            <button className="px-10 py-2 flex flex-row gap-2 bg-violet-600 rounded-lg">
+            <Link
+              href="/register"
+              className="px-10 py-2 flex w-fit flex-row gap-2 bg-violet-600 rounded-lg"
+            >
               <IconRun />
               Get Started
-            </button>
+            </Link>
           </div>
         </div>
       </div>
