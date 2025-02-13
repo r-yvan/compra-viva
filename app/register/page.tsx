@@ -9,24 +9,42 @@ import {
 import Link from "next/link";
 import { useFormik } from "formik";
 import { registrationSchema } from "./schema";
-// import axios from "axios";
+import { userAgent } from "next/server";
+import Email from "next-auth/providers/email";
+import { Bars } from "react-loader-spinner";
 
 const Register = () => {
-  const onSubmit = () => {};
-  const formik = useFormik({
+  const onFormSubmit = async (values: any, actions: any) => {
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    console.log(actions);
+    console.log(values);
+  };
+
+  const {
+    values,
+    handleChange,
+    isSubmitting,
+    handleBlur,
+    handleSubmit,
+    errors,
+    touched,
+  } = useFormik({
     initialValues: {
       username: "",
       email: "",
       password: "",
-      role: "",
+      role: "administrator",
     },
     validationSchema: registrationSchema,
-    onSubmit,
+    onSubmit: onFormSubmit,
   });
   return (
     <div className="flex justify-center items-center bg-[#050505] w-full h-screen">
-      <div className="relative">
-        <div className="card-lighter flex flex-col p-5 border border-white border-opacity-10 rounded-lg gap-3 w-[500px] bg-[#0a0a0a]">
+      <div className="relative overflow-hidden">
+        <form
+          onSubmit={handleSubmit}
+          className="card-lighter flex flex-col p-5 border border-white border-opacity-10 rounded-lg gap-3 w-[500px] bg-[#0a0a0a]"
+        >
           <div className="flex flex-col gap-2 mb-4">
             <h1 className="text-3xl font-bold">
               Create Your New <br />
@@ -38,37 +56,70 @@ const Register = () => {
           </div>
           <div className="flex flex-col">
             <label htmlFor="">Username</label>
-            <div className="flex relative">
+            <div className="flex flex-col relative">
               <IconUserHexagon className="absolute top-3 left-3 opacity-50" />
               <input
                 type="text"
+                name="username"
+                onBlur={handleBlur}
                 placeholder="Username"
-                value={formik.values.username}
-                onChange={formik.handleChange}
-                className="bg-[#0a0a0a] w-full outline-none p-3 pl-11 rounded-lg border border-white border-opacity-20"
+                value={values.username}
+                onChange={handleChange}
+                className={`bg-[#0A0A0A50] w-full outline-none p-3 pl-11 rounded-lg border ${
+                  errors.username && touched.username
+                    ? `border-red-400 border-opacity-80 text-red-400`
+                    : `border-opacity-20 border-white text-white`
+                }`}
               />
+              {errors.username && touched.username ? (
+                <p className="text-red-400 text-sm">
+                  Username must not be less than 3 characters
+                </p>
+              ) : null}
             </div>
           </div>
           <div className="flex flex-col">
             <label htmlFor="">Email</label>
-            <div className="flex relative">
+            <div className="flex flex-col relative">
               <IconMail className="absolute top-3 left-3 opacity-50" />
               <input
                 type="email"
+                name="email"
+                onChange={handleChange}
+                onBlur={handleBlur}
                 placeholder="Email"
-                className="bg-[#0a0a0a] w-full outline-none p-3 pl-11 rounded-lg border border-white border-opacity-20"
+                className={`bg-[#0A0A0A50] w-full outline-none p-3 pl-11 rounded-lg border ${
+                  errors.email && touched.email
+                    ? `border-red-400 border-opacity-80 text-red-400`
+                    : `border-opacity-20 border-white text-white`
+                }`}
               />
+              {errors.email && touched.email ? (
+                <p className="text-red-400 text-sm">Invalid email</p>
+              ) : null}
             </div>
           </div>
           <div className="flex flex-col">
             <label htmlFor="">Password</label>
-            <div className="flex relative">
+            <div className="flex flex-col relative">
               <IconShieldLock className="absolute top-3 left-3 opacity-50" />
               <input
                 type="password"
+                name="password"
+                onChange={handleChange}
+                onBlur={handleBlur}
                 placeholder="Password"
-                className="bg-[#0a0a0a] w-full outline-none p-3 pl-11 rounded-lg border border-white border-opacity-20"
+                className={`bg-[#0A0A0A50] w-full outline-none p-3 pl-11 rounded-lg border ${
+                  errors.password && touched.password
+                    ? `border-red-400 border-opacity-80 text-red-400`
+                    : `border-opacity-20 border-white text-white`
+                }`}
               />
+              {errors.password && touched.password ? (
+                <p className="text-red-400 text-sm">
+                  Password must not be less than 3 characters
+                </p>
+              ) : null}
             </div>
           </div>
           <div className="flex flex-col relative">
@@ -76,12 +127,21 @@ const Register = () => {
               Role
             </label>
             <div className="relative">
-              <select className="w-full bg-[#0a0a0a] outline-none p-3 pl-4 appearance-none rounded-lg border border-white border-opacity-20">
-                <option className="bg-red-400 m-2 border border-white border-opacity-50">
+              <select
+                name="role"
+                value={values.role}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className="w-full bg-[#0A0A0A50] outline-none p-3 pl-4 appearance-none rounded-lg border border-white border-opacity-20"
+              >
+                <option
+                  value="administrator"
+                  className="bg-red-400 m-2 border border-white border-opacity-50"
+                >
                   Administrator
                 </option>
-                <option>Buyer</option>
-                <option>Seller</option>
+                <option value="buyer">Buyer</option>
+                <option value="seller">Seller</option>
               </select>
               <div>
                 <IconCaretDown className="absolute bottom-3 right-3 pointer-events-none opacity-50" />
@@ -89,13 +149,24 @@ const Register = () => {
             </div>
           </div>
           <div className="flex justify-center">
-            <Link
-              href="/login"
+            <button
               type="submit"
               className="px-10 py-3 bg-violet-700 rounded-lg"
             >
-              Register
-            </Link>
+              {isSubmitting ? (
+                <Bars
+                  height="24"
+                  width="24"
+                  color="#FFFFFF"
+                  ariaLabel="bars-loading"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                  visible={true}
+                />
+              ) : (
+                "Register"
+              )}
+            </button>
           </div>
           <div className="flex justify-center">
             <p>
@@ -105,7 +176,7 @@ const Register = () => {
               </a>
             </p>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
