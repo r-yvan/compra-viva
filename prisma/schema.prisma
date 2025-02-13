@@ -14,11 +14,11 @@ datasource db {
 }
 
 model users {
-  buyer_id Int    @id @default(autoincrement())
+  user_id  Int    @id @default(autoincrement())
   username String @unique
-  role     String
   email    String @unique
   password String
+  role     String
 }
 
 model products {

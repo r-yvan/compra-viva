@@ -9,12 +9,17 @@ import {
   IconUserHexagon,
   IconCaretDown,
 } from "@tabler/icons-react";
+import axios from "axios";
 
 const Register = () => {
   const onFormSubmit = async (values: any, actions: any) => {
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    console.log(actions);
-    console.log(values);
+    try {
+      await axios.post("/register/api", values);
+      console.log(actions);
+      console.log(values);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const {
