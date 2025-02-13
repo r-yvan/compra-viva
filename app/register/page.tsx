@@ -10,14 +10,29 @@ import {
   IconCaretDown,
 } from "@tabler/icons-react";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const Register = () => {
+  const router = useRouter();
   const onFormSubmit = async (values: any, actions: any) => {
     try {
       await axios.post("/register/api", values);
       actions.resetForm();
+      switch (values.role) {
+        case "administrator":
+          router.push("/admin/pages/dashboard");
+          break;
+        case "seller":
+          router.push("/seller/pages/dashboard");
+          break;
+        case "buyer":
+          router.push("/buyer/pages/dashboard");
+          break;
+        default:
+          router.push("/");
+      }
     } catch (error: any) {
-      actions.setFieldError("email", "User with this email already exists!!");
+      actions.setFieldError("email", "User with this email already exist!!");
     }
   };
 
