@@ -1,4 +1,7 @@
 "use client";
+import { registrationSchema } from "./schema";
+import { Bars } from "react-loader-spinner";
+import { useFormik } from "formik";
 import React from "react";
 import {
   IconMail,
@@ -6,12 +9,6 @@ import {
   IconUserHexagon,
   IconCaretDown,
 } from "@tabler/icons-react";
-import Link from "next/link";
-import { useFormik } from "formik";
-import { registrationSchema } from "./schema";
-import { userAgent } from "next/server";
-import Email from "next-auth/providers/email";
-import { Bars } from "react-loader-spinner";
 
 const Register = () => {
   const onFormSubmit = async (values: any, actions: any) => {
