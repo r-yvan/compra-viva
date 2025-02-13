@@ -96,9 +96,9 @@ const Home = () => {
           <div className="w-1/2">
             <p>
               My Name is NKILIYE Rubuto Yvan, I am a specialized UI/UX designer
-              and frontend developer with some notions about backend and I' m
-              willing to work with anyone intellested in solving this world' s
-              problems.
+              and frontend developer with some notions about backend and I&apos;
+              m willing to work with anyone interested in solving this
+              world&apos; s problems.
             </p>
           </div>
           <div className="relative flex size-full w-1/2 max-w-lg items-center justify-center overflow-hidden rounded-lg bg-[#050505] px-40 pb-40 pt-8 md:pb-60 md:shadow-xl">
