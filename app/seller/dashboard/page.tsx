@@ -1,7 +1,7 @@
 "use client";
 import { RadialChart } from "@/components/RadialChart";
 import InputField from "@/components/InputField";
-import { Component } from "@/components/Chart";
+import { Component } from "@/components/chart";
 import React from "react";
 import {
   IconBuildingBank,

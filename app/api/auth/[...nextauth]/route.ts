@@ -8,6 +8,7 @@ import prisma from "@/prisma/client";
 const handler = NextAuth({
   providers: [
     CredentialsProvider({
+      id: "credentials",
       name: "your credentials",
       credentials: {
         email: {
@@ -66,7 +67,7 @@ const handler = NextAuth({
     },
   },
   pages: {
-    signIn: "/auth/login",
+    signIn: "/auth/signin",
     signOut: "/auth/signout",
     error: "/auth/error",
   },
