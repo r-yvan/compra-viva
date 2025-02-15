@@ -1,15 +1,13 @@
 "use client";
-import { signIn } from "next-auth/react";
-import React from "react";
 import { IconMail, IconShieldLock } from "@tabler/icons-react";
-import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
 import prisma from "@/prisma/client";
+import React from "react";
 
 const Login = () => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [error, setError] = React.useState("");
-  const router = useRouter();
   const onFormSubmit = async (event: any) => {
     event.preventDefault();
     try {

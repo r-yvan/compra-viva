@@ -1,6 +1,6 @@
 "use client";
-import React from "react";
 import { Bars } from "react-loader-spinner";
+import React from "react";
 
 const Loading = () => {
   return (

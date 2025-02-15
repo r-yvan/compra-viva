@@ -1,9 +1,9 @@
 "use client";
 import { registrationSchema } from "./schema";
 import { Bars } from "react-loader-spinner";
+import { signIn } from "next-auth/react";
 import { useFormik } from "formik";
 import React from "react";
-import { signIn } from "next-auth/react";
 import {
   IconMail,
   IconShieldLock,
@@ -11,19 +11,16 @@ import {
   IconCaretDown,
 } from "@tabler/icons-react";
 import axios from "axios";
-import { useRouter } from "next/navigation";
 
 const Register = () => {
-  const router = useRouter();
   const onFormSubmit = async (values: any) => {
     await axios.post("/api/register", values);
-    // await signIn("your credentials", {
-    //   redirect: true,
-    //   email: values.email,
-    //   password: values.password,
-    //   callbackUrl: `/${values.role}/pages/dashboard`,
-    // });
-    // router.push(`/auth/signin?callbackUrl=/pages/${values.role}/dashboard`);
+    await signIn("your credentials", {
+      redirect: true,
+      callbackUrl: "/seller/pages/dashboard",
+      email: values.email,
+      password: values.password,
+    });
   };
 
   const {
@@ -39,7 +36,7 @@ const Register = () => {
       username: "",
       email: "",
       password: "",
-      role: "administrator",
+      role: "buyer",
     },
     validationSchema: registrationSchema,
     onSubmit: onFormSubmit,
@@ -173,7 +170,7 @@ const Register = () => {
           <div className="flex justify-center">
             <p>
               Already have an account?{" "}
-              <a href="/api/auth/login" className="underline text-violet-700">
+              <a href="/auth/signin" className="underline text-violet-700">
                 Login
               </a>
             </p>

@@ -1,21 +1,18 @@
 import { GridPatternDashed } from "@/components/GridPatternDashed";
-import {
-  IconChartPie,
-  IconCoins,
-  IconComet,
-  IconHomeDollar,
-  IconTruck,
-  IconUserHexagon,
-} from "@tabler/icons-react";
 import TopNavigationBar from "@/components/TopNavigationBar";
 import { Waves } from "@/components/ui/waves-background";
 import FeatureCard from "@/components/FeatureCard";
 import decorator from "@/public/background.png";
 import UsersCard from "@/components/UsersCard";
-import { Globe } from "@/components/ui/globe";
-import me from "@/public/unreal-me-2.png";
 import Image from "next/image";
 import React from "react";
+import {
+  IconChartPie,
+  IconCoins,
+  IconComet,
+  IconTruck,
+  IconUserHexagon,
+} from "@tabler/icons-react";
 
 const Home = () => {
   return (
