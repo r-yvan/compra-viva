@@ -2,17 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/prisma/client";
 import { schema } from "./schema";
 
-interface RequestBody {
-  name: string;
-  product_type: string;
-  description: string;
-  price: number;
-  quantity: number;
-  seller_id: number;
-  image_url: string;
-}
-
-export const GET = async (request: NextRequest) => {
+export const GET = async () => {
   try {
     const result = await prisma.products.findMany();
     return NextResponse.json(result);
@@ -44,9 +34,9 @@ export const POST = async (request: NextRequest) => {
       const newProduct = await prisma.products.create({
         data: {
           name: body.name,
-          product_type: body.product_type,
-          description: body.description,
           price: body.price,
+          category: body.category,
+          description: body.description,
           quantity: body.quantity,
           seller_id: body.seller_id,
           image_url: body.image_url,

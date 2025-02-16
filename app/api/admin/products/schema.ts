@@ -2,7 +2,7 @@ import { z } from "zod";
 
 export const schema = z.object({
   name: z.string().min(3).max(30),
-  product_type: z.enum([
+  category: z.enum([
     "electronics",
     "fashion",
     "furniture",

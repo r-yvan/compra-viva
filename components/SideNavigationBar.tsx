@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import "@/globals.css";
 import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import "@/globals.css";
 
 interface SideNavigationBarProps {
   username: string;
@@ -9,6 +9,7 @@ interface SideNavigationBarProps {
   userRole: string;
   pages: { pageUrl: string; pageLabel: string; pageIcon: JSX.Element }[];
 }
+
 const SideNavigationBar = ({
   username,
   profileImage,
