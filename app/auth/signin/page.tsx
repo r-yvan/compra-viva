@@ -1,7 +1,6 @@
 "use client";
 import { IconMail, IconShieldLock } from "@tabler/icons-react";
 import { signIn } from "next-auth/react";
-import prisma from "@/prisma/client";
 import React from "react";
 
 const Login = () => {

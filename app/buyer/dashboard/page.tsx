@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
-import { Component } from "./chart";
+import InputField from "@/components/InputField";
 import { RadialChart } from "./radial-chart";
+import { Component } from "./chart";
+import React from "react";
 import {
   IconBuildingBank,
   IconListDetails,
@@ -11,10 +12,8 @@ import {
   IconSearch,
   IconGripVertical,
 } from "@tabler/icons-react";
-import InputField from "@/components/InputField";
 
 const Dashboard = () => {
-  // const [search, setSearch] = useState("");
   return (
     <div className="flex flex-col bg-[#050505] gap-5 p-2 w-full h-full -z-10">
       <div className="flex justify-center p-1">

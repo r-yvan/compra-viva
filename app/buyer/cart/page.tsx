@@ -1,13 +1,13 @@
 "use client";
-import InputField from "@/components/InputField";
+import React, { useState, useEffect } from "react";
 import ProductCard from "@/components/ProductCard";
+import InputField from "@/components/InputField";
 import {
   IconPackage,
   IconCoin,
   IconAlignRight,
   IconHeart,
 } from "@tabler/icons-react";
-import React, { useState, useEffect } from "react";
 
 interface Product {
   product_id: number;

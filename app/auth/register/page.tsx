@@ -3,6 +3,7 @@ import { registrationSchema } from "./schema";
 import { Bars } from "react-loader-spinner";
 import { signIn } from "next-auth/react";
 import { useFormik } from "formik";
+import axios from "axios";
 import React from "react";
 import {
   IconMail,
@@ -10,7 +11,6 @@ import {
   IconUserHexagon,
   IconCaretDown,
 } from "@tabler/icons-react";
-import axios from "axios";
 
 const Register = () => {
   const onFormSubmit = async (values: any) => {

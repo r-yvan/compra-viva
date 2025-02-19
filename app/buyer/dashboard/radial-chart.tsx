@@ -1,5 +1,5 @@
 "use client"
-
+import { ChartConfig, ChartContainer } from "@/components/ui/chart"
 import { TrendingUp } from "lucide-react"
 import {
   Label,
@@ -8,7 +8,6 @@ import {
   RadialBar,
   RadialBarChart,
 } from "recharts"
-
 import {
   Card,
   CardContent,
@@ -17,7 +16,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { ChartConfig, ChartContainer } from "@/components/ui/chart"
+
 const chartData = [
   { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
 ]
