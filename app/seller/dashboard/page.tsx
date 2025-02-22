@@ -14,7 +14,6 @@ import {
 } from "@tabler/icons-react";
 
 const Dashboard = () => {
-  // const [search, setSearch] = useState("");
   return (
     <div className="flex flex-col bg-[#050505] gap-5 p-2 w-full h-full">
       <div className="flex justify-center p-1">

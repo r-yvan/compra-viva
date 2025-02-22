@@ -1,23 +1,24 @@
 "use client";
-import InputField from "@/components/InputField";
+import React, { useState, useEffect } from "react";
 import ProductCard from "@/components/ProductCard";
+import InputField from "@/components/InputField";
 import {
   IconPackage,
   IconCoin,
   IconAlignRight,
   IconHeart,
 } from "@tabler/icons-react";
-import React, { useState, useEffect } from "react";
 
 interface Product {
-  product_id: number;
+  id: number;
   name: string;
-  description: string;
-  product_type: string;
   price: number;
+  category: string;
+  description: string;
   quantity: number;
   image: string;
 }
+
 const Cart = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const fetchProducts = async () => {
@@ -79,7 +80,7 @@ const Cart = () => {
       <div className="flex p-10 w-full h-full flex-row gap-10">
         {products.map((product) => (
           <ProductCard
-            key={product.product_id}
+            key={product.category}
             description={product.description}
             name={product.name}
             likes={930}

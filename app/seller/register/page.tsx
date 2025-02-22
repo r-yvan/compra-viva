@@ -6,13 +6,8 @@ import {
   IconUserHexagon,
   IconCaretDown,
 } from "@tabler/icons-react";
-// import axios from "axios";
 
 const Register = () => {
-  // const [email, setEmail] = useState("");
-  // const [username, setUsername] = useState("");
-  // const [password, setPassword] = useState("");
-
   return (
     <div className="flex justify-center items-center bg-[#050505] w-full h-screen">
       <div className="card-lighter flex flex-col p-5 border border-white border-opacity-10 rounded-lg gap-3 w-[500px] bg-[#0a0a0a]">
@@ -64,7 +59,9 @@ const Register = () => {
           </label>
           <div className="relative">
             <select className="w-full bg-[#0a0a0a] outline-none p-3 pl-4 appearance-none rounded-lg border border-white border-opacity-20">
-              <option className="bg-red-400 m-2 border border-white border-opacity-50">Administrator</option>
+              <option className="bg-red-400 m-2 border border-white border-opacity-50">
+                Administrator
+              </option>
               <option>Buyer</option>
               <option>Seller</option>
             </select>
@@ -74,16 +71,16 @@ const Register = () => {
           </div>
         </div>
         <div className="flex justify-center">
-          <button
-            type="submit"
-            className="px-10 py-3 bg-violet-700 rounded-lg"
-          >
+          <button type="submit" className="px-10 py-3 bg-violet-700 rounded-lg">
             Register
           </button>
         </div>
         <div className="flex justify-center">
           <p>
-            Already have an account? <a href="/login" className="underline text-violet-700">Login</a>
+            Already have an account?{" "}
+            <a href="/login" className="underline text-violet-700">
+              Login
+            </a>
           </p>
         </div>
       </div>
