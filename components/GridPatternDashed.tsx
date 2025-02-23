@@ -1,8 +1,8 @@
 "use client";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
 import { GridPattern } from "@/components/ui/grid-pattern";
 import { IconRun } from "@tabler/icons-react";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
 import Link from "next/link";
 
 export function GridPatternDashed() {

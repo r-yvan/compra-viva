@@ -1,13 +1,13 @@
 "use client";
-import Image from "next/image";
 import { Bars } from "react-loader-spinner";
 import React, { useState } from "react";
+import svg from "@/public/upt.png";
+import Image from "next/image";
 import {
   IconHeart,
   IconHeartFilled,
   IconShoppingCartPlus,
 } from "@tabler/icons-react";
-import svg from "@/public/upt.png";
 
 interface Props {
   image: string;
@@ -16,6 +16,7 @@ interface Props {
   description: string;
   price: number;
 }
+
 const ProductCard = ({ image, likes, name, description, price }: Props) => {
   const [isLoading, setIsLoading] = useState(false);
   return (

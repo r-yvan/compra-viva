@@ -5,6 +5,7 @@ interface Props {
   icon: JSX.Element;
   placeholder: string;
 }
+
 const InputField = ({ inputType, icon, placeholder }: Props) => {
   return (
     <div className="flex relative">
