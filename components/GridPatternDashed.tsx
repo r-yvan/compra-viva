@@ -35,7 +35,7 @@ export function GridPatternDashed() {
           </p>
           <div className="z-10">
             <Link
-              href="/auth"
+              href="/api/auth/signin"
               className="px-10 py-2 flex w-fit flex-row gap-2 bg-violet-600 rounded-lg"
             >
               <IconRun />
