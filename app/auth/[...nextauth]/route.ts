@@ -1,6 +1,7 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
+import bcrypt from "bcrypt";
 import prisma from "@/prisma/client";
 
 const handler = NextAuth({
@@ -23,7 +24,13 @@ const handler = NextAuth({
         const user = await prisma.users.findUnique({
           where: { email: credentials!.email },
         });
-        if (user && credentials?.password === user.password) {
+
+        const passwordMatch = await bcrypt.compare(
+          credentials!.password,
+          user!.password
+        );
+
+        if (user && passwordMatch) {
           return { id: user.user_id.toString(), name: user.username };
         } else {
           return null;
