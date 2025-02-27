@@ -21,8 +21,8 @@ const SignIn = () => {
   const onFormSubmit = async (event: any) => {
     event.preventDefault();
     try {
-      const result = signIn("your credentials", {
-        redirect: false,
+      signIn("your credentials", {
+        redirect: true,
         email: email,
         password: password,
       });
@@ -46,7 +46,7 @@ const SignIn = () => {
           default:
             router.push("/");
         }
-      } else router.push("/");
+      }
     } catch (error: any) {
       console.error("Failed to sign in: ", error);
       setError(error.message);
