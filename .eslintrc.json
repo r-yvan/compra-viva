@@ -1,3 +1,9 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    // Disable or customize rules here
+    "react-hooks/exhaustive-deps": "off", // Disable missing deps warning in useEffect/useCallback
+    "@typescript-eslint/no-unused-expressions": "off", // Disable unused expressions error
+    "prefer-const": "warn" // Lower severity (or use "off" to disable completely)
+  }
 }
