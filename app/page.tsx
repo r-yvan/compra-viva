@@ -1,6 +1,5 @@
 import { GridPatternDashed } from "@/components/GridPatternDashed";
 import TopNavigationBar from "@/components/TopNavigationBar";
-import { Waves } from "@/components/ui/waves-background";
 import FeatureCard from "@/components/FeatureCard";
 import decorator from "@/public/background.png";
 import UsersCard from "@/components/UsersCard";
@@ -38,20 +37,6 @@ const Home = () => {
           </p>
         </div>
         <div className="p-10 relative overflow-hidden rounded-3xl bg-[#0A0A0A] z-10 flex flex-col gap-10">
-          <Waves
-            lineColor={"rgba(255, 255, 255, 0.1)"}
-            backgroundColor="transparent"
-            waveSpeedX={0.01}
-            waveSpeedY={0.01}
-            waveAmpX={40}
-            waveAmpY={20}
-            friction={0.9}
-            tension={0.01}
-            maxCursorMove={120}
-            xGap={12}
-            yGap={36}
-            className="absolute"
-          />
           <div className="w-1/3 z-10">
             <p className="text-4xl text-left tracking-tighter font-medium">
               <span className="text-5xl text-violet-500 font-bold">Join</span>{" "}
