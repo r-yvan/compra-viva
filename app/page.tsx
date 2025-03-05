@@ -76,7 +76,7 @@ const Home = () => {
             description="Keeps customers informed with live updates on their shipment's status"
             icon={<IconTruck size={32} color="#8b5cf6" />}
           />
-           <FeatureCard
+          <FeatureCard
             title="Secured Payments"
             description="Supports multiple payment gateways with encryption and fraud detection."
             icon={<IconCoins size={32} color="#8b5cf6" />}
@@ -86,9 +86,7 @@ const Home = () => {
           // <FeatureCard /> */}
         </div>
       </div>
-      <div>
-
-      </div>
+      <div></div>
     </div>
   );
 };
