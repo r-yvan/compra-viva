@@ -32,5 +32,5 @@ export const POST = async (request: NextRequest) => {
       });
       return NextResponse.json(newUser);
     }
-  } else return NextResponse.json({ error: "Bad request!!" }, { status: 500 });
+  } else return NextResponse.json({ error: "Bad request!!" }, { status: 400 });
 };

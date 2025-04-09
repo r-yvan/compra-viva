@@ -120,10 +120,8 @@ body {
   backdrop-filter: blur(1000px);
 }
 
-.top-navigation-bar-item:hover {
-  background-color: #FFFFFF10;
-  backdrop-filter: blur(100px);
-  border: 1px solid #FFFFFF25;
+.top-navigation-bar-item:hover p {
+  color: #FFFFFF;
 }
 
 .spot-light::before {

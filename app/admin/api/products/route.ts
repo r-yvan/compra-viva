@@ -12,7 +12,7 @@ interface RequestBody {
   image_url: string;
 }
 
-export const GET = async (request: NextRequest) => {
+export const GET = async () => {
   try {
     const result = await prisma.products.findMany();
     return NextResponse.json(result);

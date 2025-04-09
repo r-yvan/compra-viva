@@ -1,19 +1,14 @@
 "use client";
-import { Bars } from "react-loader-spinner";
 import { signIn } from "next-auth/react";
-import { useFormik } from "formik";
 import React from "react";
 import {
   IconMail,
   IconShieldLock,
-  IconUserHexagon,
-  IconCaretDown,
 } from "@tabler/icons-react";
 import { useRouter } from "next/navigation";
-// import { registrationSchema } from "./schema";
 import prisma from "@/prisma/client";
 
-const SignIn = () => {
+const Login = () => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [error, setError] = React.useState("");
@@ -109,7 +104,7 @@ const SignIn = () => {
           <div className="flex justify-center">
             <p>
               Don't have an account?{" "}
-              <a href="/login" className="underline text-violet-700">
+              <a href="/auth/register" className="underline text-violet-700">
                 Signup
               </a>
             </p>
@@ -120,4 +115,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default Login;

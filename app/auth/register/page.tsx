@@ -16,7 +16,7 @@ const Register = () => {
   const router = useRouter();
   const onFormSubmit = async (values: any, actions: any) => {
     try {
-      await axios.post("/register/api", values);
+      await axios.post("/auth/register/api", values);
       actions.resetForm();
       switch (values.role) {
         case "administrator":
@@ -32,6 +32,7 @@ const Register = () => {
           router.push("/");
       }
     } catch (error: any) {
+      console.log(error);
       actions.setFieldError("email", "User with this email already exist!!");
     }
   };
