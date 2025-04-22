@@ -37,19 +37,15 @@ const handler = NextAuth({
         }
       },
     }),
-    // Uncomment and configure GoogleProvider if needed
-    // GoogleProvider({
-    //   clientId: process.env.GOOGLE_CLIENT_ID!,
-    //   clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-    // }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+    }),
   ],
   pages: {
-    signIn: "/auth/signin",
+    signIn: "/auth/login",
     signOut: "/auth/signout",
     error: "/auth/error",
-  },
-  session: {
-    strategy: "jwt",
   },
 });
 

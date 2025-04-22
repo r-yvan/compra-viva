@@ -16,7 +16,7 @@ const Register = () => {
   const router = useRouter();
   const onFormSubmit = async (values: any, actions: any) => {
     try {
-      await axios.post("/auth/register/api", values);
+      await axios.post("/auth/register", values);
       actions.resetForm();
       switch (values.role) {
         case "administrator":
