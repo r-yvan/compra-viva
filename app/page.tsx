@@ -19,8 +19,8 @@ const Home = () => {
         </div>
         <div className="flex flex-row h-full relative">
           <GridPatternDashed />
-          <div className="flex w-[55%] h-auto absolute right-0">
-            <Image alt="" src={decorator} className="w-full h-auto"></Image>
+          <div className="flex w-[55%] h-auto absolute right-0 top-10">
+            <Image alt="" src={decorator} className="w-[900px] h-auto"></Image>
           </div>
         </div>
       </div>
@@ -59,10 +59,10 @@ const Home = () => {
           </div>
           <div className="w-full z-10 h-fit flex gap-4 justify-center">
             <div>
-              <UsersCard />
+              <UsersCard userType="Sellers" />
             </div>
             <div>
-              <UsersCard />
+              <UsersCard userType="Buyers"/>
             </div>
           </div>
         </div>
@@ -81,44 +81,6 @@ const Home = () => {
           <FeatureCard />
           <FeatureCard />
           <FeatureCard />
-        </div>
-      </div>
-      <div className="bg-[#050505]">
-        <div className="flex justify-center">
-          <p className="text-3xl lighter bg-white bg-opacity-5 backdrop-blur-sm items-center px-1 py-1 rounded-full border border-[#FFFFFF20] pr-4 flex flex-row gap-3 font-semibold">
-            <span className="h-full w-full p-2 bg-violet-400 bg-opacity-25 border border-[#FFFFFF20] rounded-full">
-              <IconComet size={28} />
-            </span>
-            <span>About</span>
-          </p>
-        </div>
-        <div className="flex flex-row">
-          <div className="w-1/2">
-            <p>
-              My Name is NKILIYE Rubuto Yvan, I am a specialized UI/UX designer
-              and frontend developer with some notions about backend and I&apos;
-              m willing to work with anyone interested in solving this
-              world&apos; s problems.
-            </p>
-          </div>
-          <div className="relative flex size-full w-1/2 max-w-lg items-center justify-center overflow-hidden rounded-lg bg-[#050505] px-40 pb-40 pt-8 md:pb-60 md:shadow-xl">
-            <div>
-              <Image src={me} alt="" />
-            </div>
-            <Globe className="top-28" />
-            <div className="pointer-events-none absolute inset-0 h-full bg-[radial-gradient(circle_at_50%_200%,rgba(0,0,0,0.2),rgba(255,255,255,0))]" />
-          </div>
-        </div>
-        <div className="flex flex-row">
-          <div>
-            <p>Stay Connected</p>
-          </div>
-          <div>
-            <p>Contact Me</p>
-          </div>
-          <div>
-            <p>Follow Me</p>
-          </div>
         </div>
       </div>
     </div>

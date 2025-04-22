@@ -8,7 +8,7 @@ import Link from "next/link";
 export function GridPatternDashed() {
   return (
     <div className="relative z-10 items-center dark flex w-[55%] size-full justify-center overflow-hidden rounded-lg bg-transparent md:shadow-xl">
-      <div className="flex flex-col pl-36 gap-12 pr-10">
+      <div className="flex flex-col pl-36 py-36 gap-12 pr-36">
         <p className="z-10 relative whitespace-pre-wrap text-left text-6xl font-medium tracking-tighter text-black dark:text-white">
           Trade high-quality products through <br />
           <span className="text-7xl">
@@ -26,7 +26,7 @@ export function GridPatternDashed() {
           />
         </p>
         <div className="flex flex-col gap-5">
-          <p className="text-md">
+          <p className="text-md opacity-60">
             Are you looking for the best and most truthfull ecommerce website on
             internet?, then you are in the right place. Discover a world of
             handpicked, high-quality products at unbeatable prices! Whether
@@ -35,8 +35,8 @@ export function GridPatternDashed() {
           </p>
           <div className="z-10">
             <Link
-              href="/auth/login"
-              className="px-10 py-2 flex w-fit flex-row gap-2 bg-violet-600 rounded-lg"
+              href="/api/auth/login"
+              className="px-10 py-3 flex w-fit flex-row gap-2 bg-violet-600 rounded-2xl"
             >
               <IconRun />
               Get Started

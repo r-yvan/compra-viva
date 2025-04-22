@@ -1,5 +1,5 @@
 "use client";
-import { registrationSchema } from "./schema";
+import { registrationSchema } from "../../api/register/api/schema";
 import { Bars } from "react-loader-spinner";
 import { useFormik } from "formik";
 import React from "react";
@@ -14,27 +14,21 @@ import { useRouter } from "next/navigation";
 
 const Register = () => {
   const router = useRouter();
-  const onFormSubmit = async (values: any, actions: any) => {
-    try {
-      await axios.post("/auth/register", values);
-      actions.resetForm();
-      switch (values.role) {
-        case "administrator":
-          router.push("/admin/pages/dashboard");
-          break;
-        case "seller":
-          router.push("/seller/pages/dashboard");
-          break;
-        case "buyer":
-          router.push("/buyer/pages/dashboard");
-          break;
-        default:
-          router.push("/");
-      }
-    } catch (error: any) {
-      console.log(error);
-      actions.setFieldError("email", "User with this email already exist!!");
-    }
+  const onFormSubmit = async (values: any) => {
+    await axios.post("/api/register", values);
+    // switch (values.role) {
+    //   case "administrator":
+    //     router.push("/admin/pages/dashboard");
+    //     break;
+    //   case "seller":
+    //     router.push("/seller/pages/dashboard");
+    //     break;
+    //   case "buyer":
+    //     router.push("/buyer/pages/dashboard");
+    //     break;
+    //   default:
+    //     router.push("/");
+    // }
   };
 
   const {
@@ -184,7 +178,7 @@ const Register = () => {
           <div className="flex justify-center">
             <p>
               Already have an account?{" "}
-              <a href="/login" className="underline text-violet-700">
+              <a href="/api/auth/login" className="underline text-violet-700">
                 Login
               </a>
             </p>
