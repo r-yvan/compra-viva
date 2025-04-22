@@ -1,5 +1,5 @@
 "use client";
-import { registrationSchema } from "../../api/register/api/schema";
+import { registrationSchema } from "../../api/register/schema";
 import { Bars } from "react-loader-spinner";
 import { useFormik } from "formik";
 import React from "react";
