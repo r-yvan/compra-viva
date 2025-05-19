@@ -1,11 +1,11 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import prisma from "@/prisma/client";
-import NextAuth from "next-auth";
+import NextAuth, { AuthOptions } from "next-auth";
 import { User } from "next-auth";
 import bcrypt from "bcrypt";
 
-const handler = NextAuth({
+export const authOptions: AuthOptions = {
   providers: [
     CredentialsProvider({
       id: "credentials",
@@ -71,6 +71,7 @@ const handler = NextAuth({
     signOut: "/auth/signout",
     error: "/auth/error",
   },
-});
+};
 
+const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };

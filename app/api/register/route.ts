@@ -9,28 +9,39 @@ export const GET = async () => {
 };
 
 export const POST = async (request: NextRequest) => {
-  const body = await request.json();
-  const validationResult = userSchema.safeParse(body);
-  if (validationResult.success) {
-    const user = await prisma.users.findUnique({
-      where: { email: body.email },
-    });
-    if (user)
-      return NextResponse.json(
-        { error: "User already exists!!" },
-        { status: 400 }
-      );
-    else {
-      const passwordhash = await bcrypt.hash(body.password, 10);
-      const newUser = await prisma.users.create({
-        data: {
-          username: body.username,
-          email: body.email,
-          role: body.role,
-          password: passwordhash,
-        },
-      });
-      return NextResponse.json(newUser);
+  try {
+    const body = await request.json();
+    const validation = userSchema.safeParse(body);
+
+    if (!validation.success) {
+      return NextResponse.json(validation.error.errors, { status: 400 });
     }
-  } else return NextResponse.json({ error: "Bad request!!" }, { status: 400 });
+
+    const { username, email, password, role, profile } = validation.data;
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const user = await prisma.users.create({
+      data: {
+        username,
+        email,
+        password: hashedPassword,
+        role,
+        profile: profile
+          ? {
+              create: {
+                bio: profile.bio,
+                img_url: profile.img_url,
+              },
+            }
+          : undefined,
+      },
+      include: {
+        profile: true,
+      },
+    });
+
+    return NextResponse.json(user, { status: 201 });
+  } catch (error) {
+    return NextResponse.json({ error: "Error creating user" }, { status: 500 });
+  }
 };
