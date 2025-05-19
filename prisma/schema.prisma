@@ -14,20 +14,29 @@ datasource db {
 }
 
 model users {
-  id  Int    @id @default(autoincrement())
-  username String @unique
-  email    String @unique
+  id       Int       @id @default(autoincrement())
+  username String    @unique
+  email    String    @unique
   password String
   role     String
+  profile  profiles?
 }
 
 model products {
-  id   Int    @id @default(autoincrement())
-  name         String @unique
-  price        Float
-  category String
-  description  String
-  quantity     Int
-  seller_id    Int
-  image_url    String
+  id          Int    @id @default(autoincrement())
+  name        String @unique
+  price       Float
+  category    String
+  description String
+  quantity    Int
+  seller_id   Int
+  image_url   String
+}
+
+model profiles {
+  id      Int     @id @default(autoincrement())
+  bio     String?
+  img_url String?
+  user_id Int     @unique
+  user    users   @relation(fields: [user_id], references: [id])
 }
